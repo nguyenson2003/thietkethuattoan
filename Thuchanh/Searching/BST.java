@@ -40,7 +40,7 @@ import java.util.NoSuchElementException;
  *  when associating a value with a key that is already in the symbol table,
  *  the convention is to replace the old value with the new value.
  *  Unlike {@link java.util.Map}, this class uses the convention that
- *  values cannot be {@code null}—setting the
+ *  values cannot be {@code null} setting the
  *  value associated with a key to {@code null} is equivalent to deleting the key
  *  from the symbol table.
  *  <p>
@@ -138,8 +138,10 @@ public class BST<Key extends Comparable<Key>, Value> {
         if (x == null) return null;
         int cmp = key.compareTo(x.key);
 
-	// Lenh if ....
-
+    // Lenh if .... done
+        if(cmp>0) return get(x.right,key);
+        if(cmp<0) return get(x.left,key);
+        return x.val;
     }
 
     /**
@@ -166,10 +168,14 @@ public class BST<Key extends Comparable<Key>, Value> {
         if (x == null) return new Node(key, val, 1);
         int cmp = key.compareTo(x.key);
  
-       // Lenh if  .....
- 
+       // Lenh if  ..... done
+       if(cmp<0) x.left = put(x.left,key,val);
+       else if(cmp>0) x.right = put(x.right,key,val);
+       else x.val=val;
        // Cap nhat size 
- 
+       x.size=1;
+       if(x.left!=null)  x.size+=x.left.size;
+       if(x.right!=null) x.size+=x.right.size;
         return x;
     }
 
@@ -346,7 +352,7 @@ public class BST<Key extends Comparable<Key>, Value> {
      * @param  k the order statistic
      * @return the {@code k}th smallest key in the symbol table
      * @throws IllegalArgumentException unless {@code k} is between 0 and
-     *        <em>n</em>–1
+     *        <em>n</em>?1
      */
     public Key select(int k) {
         if (k < 0 || k >= size()) {
