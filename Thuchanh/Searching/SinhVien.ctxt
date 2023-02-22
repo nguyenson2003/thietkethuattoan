@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=SinhVien
+comment1.params=
+comment1.target=java.lang.String\ Ten()
+comment10.params=
+comment10.target=java.lang.String\ toString()
+comment11.params=args
+comment11.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=long\ MaSV()
+comment3.params=
+comment3.target=double\ DiemTBC()
+comment4.params=
+comment4.target=java.lang.String\ NgaySinh()
+comment5.params=
+comment5.target=java.lang.String\ QueQuan()
+comment6.params=
+comment6.target=java.lang.String\ Sdt()
+comment7.params=Ten\ MaSV\ DiemTBC\ NgaySinh\ QueQuan\ Sdt
+comment7.target=SinhVien(java.lang.String,\ int,\ double,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment8.params=svStr
+comment8.target=SinhVien(java.lang.String)
+comment9.params=b
+comment9.target=int\ compareTo(SinhVien)
+numComments=12
