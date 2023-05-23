@@ -145,6 +145,8 @@ public class Merge {
     public static void main(String[] args) throws IOException{
         System.setIn(new FileInputStream(new File("tiny.txt")));
         String[] a = StdIn.readAllStrings();
+        show(a);
+        StdOut.println();
         Merge.sort(a);
         show(a);
     }

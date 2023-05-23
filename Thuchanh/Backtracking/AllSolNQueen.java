@@ -77,7 +77,7 @@ static boolean solveNQUtil(int board[][], int col)
             // is possible  
         
        // Tinh menh de res o day xem co loi giai khong de quay lui ..... 
-         
+             res=solveNQUtil(board,col+1);
             /* If placing queen in board[i][col]  
             doesn't lead to a solution, then  
             remove queen from board[i][col] */

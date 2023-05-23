@@ -83,7 +83,11 @@ public class Queue<Item> implements Iterable<Item> {
         last = new Node<Item>();
 
         // Dua phan tu moi vao cuoi .....
-   
+        if(oldlast==null){
+            oldlast=last;
+            first = last;
+        } else oldlast.next=last;
+        last.item=item;
         n++;
     }
 
@@ -97,7 +101,8 @@ public class Queue<Item> implements Iterable<Item> {
         if (isEmpty()) throw new NoSuchElementException("Queue underflow");
 
         // Lay phan tu dau ra ....
-  
+        Item item=first.item;
+        first=first.next;
         n--;
         if (isEmpty()) last = null;   // to avoid loitering
         return item;

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Job_clt
+comment1.params=jobs\ n
+comment1.target=int\ findLastNonConflictingJob(java.util.List,\ int)
+comment2.params=jobs
+comment2.target=Job_clt(java.util.List)
+comment3.params=
+comment3.target=java.util.Iterator\ iterator()
+comment4.params=
+comment4.target=int\ maxProfit()
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

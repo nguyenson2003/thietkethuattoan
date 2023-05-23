@@ -1,5 +1,5 @@
  
 
 public interface Expression {
-	public int interpret();
+    public double interpret();
 }

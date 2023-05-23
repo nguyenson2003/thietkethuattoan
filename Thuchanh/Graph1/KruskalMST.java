@@ -85,8 +85,8 @@ public class KruskalMST {
         UF uf = new UF(G.V());
         while (!pq.isEmpty() && mst.size() < G.V() - 1) {
             
-              // Xoa e la phan tu min cua pq ......
-            
+            // Xoa e la phan tu min cua pq ......done
+            Edge e = pq.delMin();
             int v = e.either();
             int w = e.other(v);
             if (!uf.connected(v, w)) { // v-w does not create a cycle

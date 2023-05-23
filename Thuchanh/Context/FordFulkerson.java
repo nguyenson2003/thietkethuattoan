@@ -80,8 +80,8 @@ public class FordFulkerson {
 
             for (int v = t; v != s; v = edgeTo[v].other(v)) {
            
-          //  Bo sung vong for cho Duong tang luong o day ....
-      
+                //  Bo sung vong for cho Duong tang luong o day ....
+                edgeTo[v].addResidualFlowTo(v,bottle);
             }
 
             value += bottle;

@@ -84,8 +84,13 @@ public class DijkstraSP {
         pq = new IndexMinPQ<Double>(G.V());
         pq.insert(s, distTo[s]);
 
-    // Bo sung vong while chon phan tu min trong PQ .......
-
+        // Bo sung vong while chon phan tu min trong PQ .......
+        while(!pq.isEmpty()){
+            int u = pq.delMin();
+            for(DirectedEdge e:G.adj(u)){
+                relax(e);
+            }
+        }
 
         // check optimality conditions
         assert check(G, s);

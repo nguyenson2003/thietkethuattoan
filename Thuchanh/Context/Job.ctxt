@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Job
+comment1.params=start\ finish\ profit
+comment1.target=Job(int,\ int,\ int)
+comment2.params=y
+comment2.target=int\ compareTo(Job)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

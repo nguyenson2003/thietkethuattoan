@@ -28,7 +28,7 @@
 public class Inversions {
 
     // do not instantiate
-    private Inversions() { }
+    private Inversions() {}
 
     // merge and count
     private static long merge(int[] a, int[] aux, int lo, int mid, int hi) {
@@ -43,8 +43,11 @@ public class Inversions {
         int i = lo, j = mid+1;
         for (int k = lo; k <= hi; k++) {
 
-        // Bo sung noi dung vong for de tron lai .....
-
+            // Bo sung noi dung vong for de tron lai .....
+            if      (i > mid)                a[k] = aux[j++];
+            else if (j > hi)                 a[k] = aux[i++];
+            else if (aux[j] < aux[i]) {      a[k] = aux[j++]; inversions += (mid - i + 1); }
+            else                             a[k] = aux[i++];
         }
         return inversions;
     }

@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Vertex
+comment1.params=name
+comment1.target=Vertex(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ Node\ of\ class\ Vertex\r\n
+comment2.params=vertexs
+comment2.target=Vertex(Bag)
+comment2.text=\r\n\ Constructor\ for\ SuperNode\ of\ class\ Vertex\r\n
+comment3.params=v
+comment3.target=boolean\ contains(java.lang.String)
+comment4.params=v
+comment4.target=boolean\ contains(Vertex)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=that
+comment6.target=int\ compareTo(Vertex)
+comment7.params=o
+comment7.target=boolean\ equals(java.lang.Object)
+numComments=8

@@ -164,7 +164,7 @@ public class ClosestPair {
         return v.compareTo(w) < 0;
     }
 
-    // stably merge a[lo .. mid] with a[mid+1 ..hi] using aux[lo .. hi]
+    // stably merge: a[lo .. mid] with a[mid+1 ..hi] using aux[lo .. hi]
     // precondition: a[lo .. mid] and a[mid+1 .. hi] are sorted subarrays
     private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
         // copy to aux[]
@@ -176,16 +176,19 @@ public class ClosestPair {
         int i = lo, j = mid+1;
 
         for (int k = lo; k <= hi; k++) {
-	
-     // Bo sung vong for trong merge  de tron lai ......
     
+        // Bo sung vong for trong merge  de tron lai ......
+            if      (i > mid)                       a[k] = aux[j++];
+            else if (j > hi)                        a[k] = aux[i++];
+            else if (aux[j].compareTo(aux[i])<0)    a[k] = aux[j++];
+            else                                    a[k] = aux[i++];
         }
 
     }
 
 
 
-   /**
+    /**
      * Unit tests the {@code ClosestPair} data type.
      * Reads in an integer {@code n} and {@code n} points (specified by
      * their <em>x</em>- and <em>y</em>-coordinates) from standard input;

@@ -25,7 +25,7 @@ import java.util.Comparator;
  */
 public class Transaction implements Comparable<Transaction> {
     private final String  who;      // customer
-    private final Date    when;     // date
+    private final VietnamseDate    when;     // date
     private final double  amount;   // amount
 
 
@@ -39,7 +39,7 @@ public class Transaction implements Comparable<Transaction> {
      *         is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY},
      *         or {@code Double.NEGATIVE_INFINITY}
      */
-    public Transaction(String who, Date when, double amount) {
+    public Transaction(String who, VietnamseDate when, double amount) {
         if (Double.isNaN(amount) || Double.isInfinite(amount))
             throw new IllegalArgumentException("Amount cannot be NaN or infinite");
         this.who    = who;
@@ -58,7 +58,7 @@ public class Transaction implements Comparable<Transaction> {
     public Transaction(String transaction) {
         String[] a = transaction.split("\\s+");
         who    = a[0];
-        when   = new Date(a[1]);
+        when   = new VietnamseDate(a[1]);
         amount = Double.parseDouble(a[2]);
         if (Double.isNaN(amount) || Double.isInfinite(amount))
             throw new IllegalArgumentException("Amount cannot be NaN or infinite");
@@ -78,7 +78,7 @@ public class Transaction implements Comparable<Transaction> {
      *
      * @return the date of this transaction
      */
-    public Date when() {
+    public VietnamseDate when() {
         return when;
     }
  
@@ -185,10 +185,10 @@ public class Transaction implements Comparable<Transaction> {
      */
     public static void main(String[] args) {
         Transaction[] a = new Transaction[4];
-        a[0] = new Transaction("Turing   6/17/1990  644.08");
-        a[1] = new Transaction("Tarjan   3/26/2002 4121.85");
-        a[2] = new Transaction("Knuth    6/14/1999  288.34");
-        a[3] = new Transaction("Dijkstra 8/22/2007 2678.40");
+        a[0] = new Transaction("Turing   17/6/1990  644.08");
+        a[1] = new Transaction("Tarjan   26/3/2002 4121.85");
+        a[2] = new Transaction("Knuth    14/6/1999  288.34");
+        a[3] = new Transaction("Dijkstra 22/8/2007 2678.40");
 
         StdOut.println("Unsorted");
         for (int i = 0; i < a.length; i++)
@@ -201,7 +201,7 @@ public class Transaction implements Comparable<Transaction> {
             StdOut.println(a[i]);
         StdOut.println();
         
-                StdOut.println("Sort by date");
+        StdOut.println("Sort by date");
         Arrays.sort(a, new Transaction.WhenOrder());
         for (int i = 0; i < a.length; i++)
             StdOut.println(a[i]);

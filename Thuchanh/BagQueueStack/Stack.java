@@ -71,7 +71,8 @@ public class Stack<Item> implements Iterable<Item> {
         first = new Node<Item>();
         
        // Cap nhat phan tu dau va phan tu tiep theo ....
-      
+        first.next=oldfirst;
+        first.item=item;
         n++;
     }
 

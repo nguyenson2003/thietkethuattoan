@@ -26,7 +26,7 @@
  ******************************************************************************/
 
  
-//import java.io.*;
+import java.util.HashMap;
 import java.io.File;
 
 /**
@@ -44,13 +44,12 @@ public class FrequencyIndex {
 
     // Do not instantiate.
     private FrequencyIndex() { }
-
-    public static void main(String[] args) throws IOException { 
-        System.setIn(new FileInputStream(new File("ex1.txt")));
-        // key = word, value = set of files containing that word
+    // {"ex1.txt","ex2.txt","ex3.txt","ex4.txt"}
+    public static void main(String[] args) { 
+        // System.setIn(new FileInputStream(new File("ex1.txt")));
+        // key = word, value = file + so lan xuat hien
+        HashMap<String,HashMap<File,Integer>> map = new HashMap<>();
         
-        BST<String, SET<File>> st = new BST<String, SET<File>>();
-
         // create inverted index of all files
         StdOut.println("Indexing files");
         for (String filename : args) {
@@ -60,14 +59,21 @@ public class FrequencyIndex {
             
             while (!in.isEmpty()) {
                 String word = in.readString();
-                if (!st.contains(word)) st.put(word, new SET<File>());
-                SET<File> set = st.get(word);
-                set.add(file);
+                if(!map.containsKey(word)){
+                    map.put(word,new HashMap<>());
+                }
+                HashMap<File,Integer> temp = map.get(word);
+                temp.put(file,temp.getOrDefault(file,0)+1);
             }
         }
-
+        
+        for(var temp:map.entrySet()){
+            StdOut.println(temp.getKey());
+            for(var temp2:temp.getValue().entrySet()){
+                StdOut.printf("\t %s - %d lan\n",temp2.getKey(),temp2.getValue());
+            }
+        }
     }
-
 }
 
 /******************************************************************************

@@ -1,0 +1,54 @@
+#BlueJ class context
+comment0.target=GraphGenerator
+comment0.text=\r\n\ \ The\ {@code\ GraphGenerator}\ class\ provides\ static\ methods\ for\ creating\r\n\ \ various\ graphs,\ including\ Erdos-Renyi\ random\ graphs,\ random\ bipartite\r\n\ \ graphs,\ random\ k-regular\ graphs,\ and\ random\ rooted\ trees.\r\n\ \ <p>\r\n\ \ For\ additional\ documentation,\ see\ <a\ href\="https\://algs4.cs.princeton.edu/41graph">Section\ 4.1</a>\ of\r\n\ \ <i>Algorithms,\ 4th\ Edition</i>\ by\ Robert\ Sedgewick\ and\ Kevin\ Wayne.\r\n\r\n\ \ @author\ Robert\ Sedgewick\r\n\ \ @author\ Kevin\ Wayne\r\n
+comment1.params=
+comment1.target=GraphGenerator()
+comment10.params=V
+comment10.target=Graph\ cycle(int)
+comment10.text=\r\n\ Returns\ a\ cycle\ graph\ on\ {@code\ V}\ vertices.\r\n\ @param\ V\ the\ number\ of\ vertices\ in\ the\ cycle\r\n\ @return\ a\ cycle\ graph\ on\ {@code\ V}\ vertices\r\n
+comment11.params=V\ E
+comment11.target=Graph\ eulerianCycle(int,\ int)
+comment11.text=\r\n\ Returns\ an\ Eulerian\ cycle\ graph\ on\ {@code\ V}\ vertices.\r\n\r\n\ @param\ \ V\ the\ number\ of\ vertices\ in\ the\ cycle\r\n\ @param\ \ E\ the\ number\ of\ edges\ in\ the\ cycle\r\n\ @return\ a\ graph\ that\ is\ an\ Eulerian\ cycle\ on\ {@code\ V}\ vertices\r\n\ \ \ \ \ \ \ \ \ and\ {@code\ E}\ edges\r\n\ @throws\ IllegalArgumentException\ if\ either\ {@code\ V\ <\=\ 0}\ or\ {@code\ E\ <\=\ 0}\r\n
+comment12.params=V\ E
+comment12.target=Graph\ eulerianPath(int,\ int)
+comment12.text=\r\n\ Returns\ an\ Eulerian\ path\ graph\ on\ {@code\ V}\ vertices.\r\n\r\n\ @param\ \ V\ the\ number\ of\ vertices\ in\ the\ path\r\n\ @param\ \ E\ the\ number\ of\ edges\ in\ the\ path\r\n\ @return\ a\ graph\ that\ is\ an\ Eulerian\ path\ on\ {@code\ V}\ vertices\r\n\ \ \ \ \ \ \ \ \ and\ {@code\ E}\ edges\r\n\ @throws\ IllegalArgumentException\ if\ either\ {@code\ V\ <\=\ 0}\ or\ {@code\ E\ <\ 0}\r\n
+comment13.params=V
+comment13.target=Graph\ wheel(int)
+comment13.text=\r\n\ Returns\ a\ wheel\ graph\ on\ {@code\ V}\ vertices.\r\n\ @param\ V\ the\ number\ of\ vertices\ in\ the\ wheel\r\n\ @return\ a\ wheel\ graph\ on\ {@code\ V}\ vertices\:\ a\ single\ vertex\ connected\ to\r\n\ \ \ \ \ every\ vertex\ in\ a\ cycle\ on\ {@code\ V-1}\ vertices\r\n
+comment14.params=V
+comment14.target=Graph\ star(int)
+comment14.text=\r\n\ Returns\ a\ star\ graph\ on\ {@code\ V}\ vertices.\r\n\ @param\ V\ the\ number\ of\ vertices\ in\ the\ star\r\n\ @return\ a\ star\ graph\ on\ {@code\ V}\ vertices\:\ a\ single\ vertex\ connected\ to\r\n\ \ \ \ \ every\ other\ vertex\r\n
+comment15.params=V\ k
+comment15.target=Graph\ regular(int,\ int)
+comment15.text=\r\n\ Returns\ a\ uniformly\ random\ {@code\ k}-regular\ graph\ on\ {@code\ V}\ vertices\r\n\ (not\ necessarily\ simple).\ The\ graph\ is\ simple\ with\ probability\ only\ about\ e^(-k^2/4),\r\n\ which\ is\ tiny\ when\ k\ \=\ 14.\r\n\r\n\ @param\ V\ the\ number\ of\ vertices\ in\ the\ graph\r\n\ @param\ k\ degree\ of\ each\ vertex\r\n\ @return\ a\ uniformly\ random\ {@code\ k}-regular\ graph\ on\ {@code\ V}\ vertices.\r\n
+comment16.params=V
+comment16.target=Graph\ tree(int)
+comment16.text=\r\n\ Returns\ a\ uniformly\ random\ tree\ on\ {@code\ V}\ vertices.\r\n\ This\ algorithm\ uses\ a\ Prufer\ sequence\ and\ takes\ time\ proportional\ to\ <em>V\ log\ V</em>.\r\n\ @param\ V\ the\ number\ of\ vertices\ in\ the\ tree\r\n\ @return\ a\ uniformly\ random\ tree\ on\ {@code\ V}\ vertices\r\n
+comment17.params=args
+comment17.target=void\ main(java.lang.String[])
+comment17.text=\r\n\ Unit\ tests\ the\ {@code\ GraphGenerator}\ library.\r\n\r\n\ @param\ args\ the\ command-line\ arguments\r\n
+comment2.params=V\ E
+comment2.target=Graph\ simple(int,\ int)
+comment2.text=\r\n\ Returns\ a\ random\ simple\ graph\ containing\ {@code\ V}\ vertices\ and\ {@code\ E}\ edges.\r\n\ @param\ V\ the\ number\ of\ vertices\r\n\ @param\ E\ the\ number\ of\ vertices\r\n\ @return\ a\ random\ simple\ graph\ on\ {@code\ V}\ vertices,\ containing\ a\ total\r\n\ \ \ \ \ of\ {@code\ E}\ edges\r\n\ @throws\ IllegalArgumentException\ if\ no\ such\ simple\ graph\ exists\r\n
+comment3.params=V\ p
+comment3.target=Graph\ simple(int,\ double)
+comment3.text=\r\n\ Returns\ a\ random\ simple\ graph\ on\ {@code\ V}\ vertices,\ with\ an\ \r\n\ edge\ between\ any\ two\ vertices\ with\ probability\ {@code\ p}.\ This\ is\ sometimes\r\n\ referred\ to\ as\ the\ Erdos-Renyi\ random\ graph\ model.\r\n\ @param\ V\ the\ number\ of\ vertices\r\n\ @param\ p\ the\ probability\ of\ choosing\ an\ edge\r\n\ @return\ a\ random\ simple\ graph\ on\ {@code\ V}\ vertices,\ with\ an\ edge\ between\r\n\ \ \ \ \ any\ two\ vertices\ with\ probability\ {@code\ p}\r\n\ @throws\ IllegalArgumentException\ if\ probability\ is\ not\ between\ 0\ and\ 1\r\n
+comment4.params=V
+comment4.target=Graph\ complete(int)
+comment4.text=\r\n\ Returns\ the\ complete\ graph\ on\ {@code\ V}\ vertices.\r\n\ @param\ V\ the\ number\ of\ vertices\r\n\ @return\ the\ complete\ graph\ on\ {@code\ V}\ vertices\r\n
+comment5.params=V1\ V2
+comment5.target=Graph\ completeBipartite(int,\ int)
+comment5.text=\r\n\ Returns\ a\ complete\ bipartite\ graph\ on\ {@code\ V1}\ and\ {@code\ V2}\ vertices.\r\n\ @param\ V1\ the\ number\ of\ vertices\ in\ one\ partition\r\n\ @param\ V2\ the\ number\ of\ vertices\ in\ the\ other\ partition\r\n\ @return\ a\ complete\ bipartite\ graph\ on\ {@code\ V1}\ and\ {@code\ V2}\ vertices\r\n\ @throws\ IllegalArgumentException\ if\ probability\ is\ not\ between\ 0\ and\ 1\r\n
+comment6.params=V1\ V2\ E
+comment6.target=Graph\ bipartite(int,\ int,\ int)
+comment6.text=\r\n\ Returns\ a\ random\ simple\ bipartite\ graph\ on\ {@code\ V1}\ and\ {@code\ V2}\ vertices\r\n\ with\ {@code\ E}\ edges.\r\n\ @param\ V1\ the\ number\ of\ vertices\ in\ one\ partition\r\n\ @param\ V2\ the\ number\ of\ vertices\ in\ the\ other\ partition\r\n\ @param\ E\ the\ number\ of\ edges\r\n\ @return\ a\ random\ simple\ bipartite\ graph\ on\ {@code\ V1}\ and\ {@code\ V2}\ vertices,\r\n\ \ \ \ containing\ a\ total\ of\ {@code\ E}\ edges\r\n\ @throws\ IllegalArgumentException\ if\ no\ such\ simple\ bipartite\ graph\ exists\r\n
+comment7.params=V1\ V2\ p
+comment7.target=Graph\ bipartite(int,\ int,\ double)
+comment7.text=\r\n\ Returns\ a\ random\ simple\ bipartite\ graph\ on\ {@code\ V1}\ and\ {@code\ V2}\ vertices,\r\n\ containing\ each\ possible\ edge\ with\ probability\ {@code\ p}.\r\n\ @param\ V1\ the\ number\ of\ vertices\ in\ one\ partition\r\n\ @param\ V2\ the\ number\ of\ vertices\ in\ the\ other\ partition\r\n\ @param\ p\ the\ probability\ that\ the\ graph\ contains\ an\ edge\ with\ one\ endpoint\ in\ either\ side\r\n\ @return\ a\ random\ simple\ bipartite\ graph\ on\ {@code\ V1}\ and\ {@code\ V2}\ vertices,\r\n\ \ \ \ containing\ each\ possible\ edge\ with\ probability\ {@code\ p}\r\n\ @throws\ IllegalArgumentException\ if\ probability\ is\ not\ between\ 0\ and\ 1\r\n
+comment8.params=V
+comment8.target=Graph\ path(int)
+comment8.text=\r\n\ Returns\ a\ path\ graph\ on\ {@code\ V}\ vertices.\r\n\ @param\ V\ the\ number\ of\ vertices\ in\ the\ path\r\n\ @return\ a\ path\ graph\ on\ {@code\ V}\ vertices\r\n
+comment9.params=V
+comment9.target=Graph\ binaryTree(int)
+comment9.text=\r\n\ Returns\ a\ complete\ binary\ tree\ graph\ on\ {@code\ V}\ vertices.\r\n\ @param\ V\ the\ number\ of\ vertices\ in\ the\ binary\ tree\r\n\ @return\ a\ complete\ binary\ tree\ graph\ on\ {@code\ V}\ vertices\r\n
+numComments=18

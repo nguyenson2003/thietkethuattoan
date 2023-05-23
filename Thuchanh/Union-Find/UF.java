@@ -128,8 +128,10 @@ public class UF {
     public int find(int p) {
         validate(p);
    
-     // path compression by halving
-   
+        // path compression by halving
+        if(parent[p]==p)return p;
+        parent[p]=find(parent[p]);
+        return parent[p];
     }
 
     /**
@@ -170,8 +172,8 @@ public class UF {
         if (rootP == rootQ) return;
 
         // make root of smaller rank point to root of larger rank ....... 
-       // Bo sung code o day ......
-
+        // Bo sung code o day ......
+        parent[rootP]=rootQ;
 
         count--;
     }

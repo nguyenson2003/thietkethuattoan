@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Knapsack_opt
+comment1.params=weight_knapsack\ item
+comment1.target=Knapsack_opt(int,\ Queue)
+comment2.params=
+comment2.target=java.util.Iterator\ iterator()
+comment3.params=
+comment3.target=int\ weight_knapsack()
+comment4.params=
+comment4.target=int\ profit_all()
+comment5.params=
+comment5.target=int\ weight_all()
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7
